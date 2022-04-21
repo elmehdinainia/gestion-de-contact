@@ -1,4 +1,15 @@
-<!DOCTYPE html>
+<?php
+session_start();
+    include_once('dbConnect.php');
+include_once('./user.php');
+if (isset($_POST['signup'])){
+  $user1 = new User(connect());
+  $user1->signup();
+}
+
+?>
+
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -45,7 +56,7 @@
 
                     <button class="btn btn-primary text-black fs-4 p-3 " style="width: 130px;" data-bs-toggle="modal"
                         data-bs-target="#exampleModal">Sign_up</button>
-                    <button class="btn btn-primary text-black fs-4 p-3 botox" style="width: 130px;">Login</button>
+                    <a class="btn btn-primary text-black fs-4 p-3 botox" href="authtifc.php" style="width: 130px;">Login</a>
                         <!-- -----------------------------------------------button ------------------------------------------>
 
                 </div>
@@ -73,27 +84,36 @@
                 </div>
                 <div class="modal-body">
                     <div class="container w-50 d-flex justify-content-center flex-column p-4">
-                        <h2 class="text-center">Sign Up</h2>
-                        <form>
+                        <h2 class="text-center p-3">Sign Up</h2>
+                          <?php
+                        //  include_once('cnx.php');
+                        //   $conn = New conn();
+               ?>
+                           
+ 
 
-                            <div class="mb-3 ">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
+                        <form style="margin-left:-34px" method="POST" action="acceil.php"  id="inscription">
+
+                            <div class="mb-3 input-control">
+                                <label for="exampleInputEmail1" class="form-label fs-4">User Name</label>
+                                <input name="username" type="text" class="form-control p-2 test " id="username" style="width:270px"
                                     aria-describedby="emailHelp">
+                                    <div  class="alert d-none"></div>
                             </div>
 
-                            <div class="mb-3 ">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            <div class="mb-3 input-control">
+                                <label for="exampleInputPassword2" class="form-label fs-4">Password</label>
+                                <input name="password" type="password" class="form-control p-2"id="password"style="width:270px">
+                                <div  class="alert d-none"></div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password verify</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
-                            </div>
+                            <div class="mb-3 input-control">
+                                <label for="exampleInputPassword3" class="form-label fs-4 ">Password verify</label>
+                                <input name="password2" type="password" class="form-control p-2"  id="password2"style="width:270px">
+                                <div  class="alert d-none"></div>                       
 
-                            <button type="submit" class="btn btn-primary w-100">Login</button>
-                            <p class="p-2"> no account? <span class="text-primary">Login here?</span></p>
+                            <input type="submit" name="signup"  value="sign up" id="boton" class="btn btn-primary w-100 mt-2"style="margin-left:19ox">
+
                         </form>
                     </div>
                 </div>
@@ -105,31 +125,6 @@
         </div>
     </div>
     <div>
-
-
-
-    <!-- -----------------------------------------------ign in ------------------------------------------>
-    <div class="container  position-absolut d-flex justify-content-center flex-column p-4 autentif invisible bge"style="width:30%;">
-    <button type="button" class="btn-close hayed bg-white" aria-label="Close"></button>
-            <h2 class="text-center fs-2 text-white">sign in</h2>
-            <form>
-
-                <div class="mb-3">
-
-                  <label for="exampleInputEmail1" class="form-label text-white p-2 fs-5">Email address</label>
-                  <input type="email" class="form-control p-3" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label text-white p-2 fs-5">Password</label>
-                  <input type="password" class="form-control p-3" id="exampleInputPassword1">
-                </div>
-                <button type="submit" class="btn btn-primary w-100 fs-4 P-3">Login</button>
-
-                <p class="p-2 text-white  fs-5"> no account? <span class="her">Login here</span></p>
-
-
-              </form>
-        </div>
         </div>
 
         </main>
@@ -140,7 +135,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
-    <script src="main.js"></script>
+    <script src="./sugnup.js"></script>
     <!-- script bootstrap -->
 </body>
 

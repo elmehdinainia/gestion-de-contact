@@ -3,14 +3,15 @@
 include_once('contact.class.php');
 include_once('dbConnect.php');
     
-if (isset($_POST['add'])){
+if (isset($_POST['Update'])){
     $contact = new contact(connect());
+    echo 'true';
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-
-    $contact->add_con($name,$email,$phone,$address);
+    $id = $_GET['id'];
+    $contact->editpost($name,$email,$phone,$address,$id);
 }
 
 
@@ -54,29 +55,50 @@ if (isset($_POST['add'])){
             <h2 class="pb-3">contacts</h2>
             <h4>class list:</h4>
             <h3>Add contact</h3>
-            <form class="row g-3 d-flex"  action="" method="POSt" >
+            <?php
+ include_once('dbConnect.php');
+ include_once('contact.class.php');
+ 
+
+if (isset($_GET['id'])){
+$results = $a->affichagepost($_GET['id']);
+}
+
+
+
+?>
+  
+
+            <form class="row g-3 d-flex" method="POSt" >
+            <?php foreach($results as $result){?>
+                
+       
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">Name</label>
-                    <input type="text" name="name" class="form-control" id="inputEmail4">
+                    <input type="text" name="name" class="form-control" value="<?php if(isset($result['Name'])) echo $result['Name'] ?>" id="inputEmail4">
                 </div>
                 <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">Phone</label>
-                    <input type="text" name="phone" class="form-control" id="inputPassword4">
+                 <label for="inputPassword4" class="form-label">Phone</label>
+                    <input type="text" name="phone" class="form-control" value="<?php if(isset($result['phone'])) echo $result['phone']  ?>" id="inputPassword4">
                 </div>
 
                 <div class="col-12">
                     <label for="inputAddress" class="form-label">Email</label>
-                    <input type="text" name="email" class="form-control" id="inputAddress">
+                    <input type="text" name="email" class="form-control" value="<?php if(isset($result['email'])) echo $result['email']  ?>" id="inputAddress">
                 </div>
                 <div class="col-12">
                     <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                    <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <input type="text" class="form-control" name="address" value="<?php if(isset($result['adresse'])) echo $result['adresse']  ?>" ></input>
                 </div>
 
                 <div class="col-12 text-center">
-                    <button type="submit" name="add" class="btn btn-primary p-3 w-50">Save</button>
+                    <button type="submit" name="Update" class="btn btn-primary p-3 w-50">edit</button>
                 </div>
+            <?php }?>
             </form>
+            
+     
+
         </div>
         <div class="">
             <img src="./assets/undrwwww.svg" alt="calling" height="400" width="400">

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,7 +12,7 @@
 
 <body>
 <!-- header -->
-    <header class="p-2 bg-dark text-white">
+    <!-- <header class="p-2 bg-primary text-white">
         <div class="container-fluid">
       
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -26,10 +26,10 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
  <!-- header -->
  
-        <div class="container w-50 d-flex justify-content-center flex-column p-4" >
+        <!-- <div class="container w-50 d-flex justify-content-center flex-column p-4" >
             <h2 class="text-center">Sign Up</h2>
             <form>
 
@@ -51,18 +51,18 @@
                 <button type="submit" class="btn btn-primary w-100">Login</button>
                 <p class="p-2"> no account? <span class="text-primary">Login here?</span></p>
               </form>
-        </div>
+        </div> -->
 
 
 
 
         <!-- script bootstrap -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
             crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-            crossorigin="anonymous"></script>
+            crossorigin="anonymous"></script> -->
         <!-- script bootstrap -->
-</body>
+<!-- </body>
 
-</html>
+</html> --> 
