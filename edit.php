@@ -5,7 +5,6 @@ include_once('dbConnect.php');
     
 if (isset($_POST['Update'])){
     $contact = new contact(connect());
-    echo 'true';
     $name = $_POST['name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];

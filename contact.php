@@ -40,7 +40,7 @@ if (isset($_POST['add'])){
 
                 <div class="text-end">
                     <a href="./profil.php"  class="btn btn-outline-light fs-5" style="border: none"><?php echo $_SESSION['username']; ?></a>
-                    <button type="button" class="btn btn-outline-light fs-5" style="border: none">contacts</button>
+                    <a href="./listabl.php" type="button" class="btn btn-outline-light fs-5" style="border: none">contacts</a>
                     <button type="button" class="btn btn-outline-light fs-5" style="border: none">Logout</button>
 
 
@@ -70,7 +70,7 @@ if (isset($_POST['add'])){
                 </div>
                 <div class="col-12">
                     <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                    <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <input class="form-control" name="address" id="exampleFormControlTextarea1"></input>
                 </div>
 
                 <div class="col-12 text-center">

@@ -6,7 +6,6 @@ class User{
        $this->conn = $conn;
     }
     public function signup(){
-        // var_dump('ksdjkwjdiwjiwdnhwihndiuwhdiuwdw');
         if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['password2']));
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -15,7 +14,6 @@ class User{
         $date = date('Y-m-d');
         $time = date('h:i:sa');
         $siup_log = $date." ".$time;
-
         $query= $this->conn ->prepare("INSERT INTO `user`(`username`, `password`, `last_signup`) VALUES (?,?,?)"); 
         $query->bindParam(1,$username , PDO::PARAM_STR);
         $query->bindParam(2,$password , PDO::PARAM_STR);
@@ -25,10 +23,7 @@ class User{
             $_SESSION['id_user'] = $row['iduser'];
             $_SESSION['username'] = $username;
             $_SESSION['last_signup'] = $row['last_signup'];
-
-
-
-            header('location:contact.php');
+            header('location:authtifc.php');
         }
 
 
@@ -40,10 +35,8 @@ class User{
     $query->execute();
     if($query->execute()){
         $row = $query->fetch();
-        // session_start();
         $_SESSION['id_user'] = $row['iduser'];
         $_SESSION['username'] = $row['username'];
-
         echo $row['iduser'];
         $date = date('Y-m-d');
         $time = date('h:i:sa');
