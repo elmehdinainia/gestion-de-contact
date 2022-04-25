@@ -29,7 +29,7 @@ class User{
 
  }
  public function signin($username,$password){
-    $query= $this->conn ->prepare("SELECT * FROM `user` WHERE `username` = ? AND `password` = ?"); 
+    $query= $this->conn ->prepare(" SELECT * FROM `user` WHERE `username` = ? AND `password` = ?"); 
     $query->bindParam(1,$username , PDO::PARAM_STR);
     $query->bindParam(2,$password , PDO::PARAM_STR);
     $query->execute();

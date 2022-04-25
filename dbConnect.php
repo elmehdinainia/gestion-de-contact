@@ -5,7 +5,7 @@ function connect(){
 $server ="localhost";
 $username ="root";
 $password="";
-$db ="gestion_contact";
+$db ='gestion_contact.';
 // $conn; 
 try {
 $conn = new PDO("mysql:host=$server;dbname=$db", $username, $password);

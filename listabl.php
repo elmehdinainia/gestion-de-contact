@@ -48,7 +48,9 @@ $sel = new contact();
                     </tr>
                 </thead>
   <tbody>
-   <?php    $data = $sel->select(); 
+   <?php  
+   $sel = new contact();
+   $data = $sel->select(); 
   foreach($data as $row){?>
             <tr class="bg-white ">
                 <td> <img class="rounded-circle" src="./assets/e8ad08.jfif" alt="calling" height="50" width="50">

@@ -1,7 +1,7 @@
 <?php
 session_start();
     include_once('dbConnect.php');
-include_once('./user.php');
+     include_once('./class-user.php');
 if (isset($_POST['signup'])){
   $user1 = new User(connect());
   $user1->signup();

@@ -29,7 +29,6 @@ class contact{
         function select(){
             $id = $_SESSION['id_user'];
             $insert =connect()->prepare("SELECT * FROM contact WHERE iduser=?"); 
-            // $insert ->execute(array($_SESSION['id_user'],$this->name, $this->email, $this->phone,$this->address));
             $insert -> bindParam(1, $id, PDO::PARAM_INT );
             $insert -> execute();
             $stmt = $insert ->fetchAll(PDO::FETCH_ASSOC);
