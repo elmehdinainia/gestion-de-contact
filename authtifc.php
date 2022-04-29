@@ -5,10 +5,10 @@ include_once('./class-user.php');
 if (isset($_POST['sublogin'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-  $user1 = new User(connect());
-  $user1->signin($username,$password);
-}
-?>
+    $user1 = new User(connect());
+    $user1->signin($username,$password);
+    }
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 

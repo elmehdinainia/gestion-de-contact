@@ -1,6 +1,6 @@
 <?php
     include_once('dbConnect.php');
-    include_once('./user.php');
+    include_once('./class-user.php');
 session_start();
 
 
@@ -37,11 +37,11 @@ $info=$user->get_user_data($_SESSION['username']);
                     <td> <?php echo $_SESSION['username']; ?></td>
                   </tr>
                   <tr>
-                    <th>SignDate</th>
+                    <th>last login</th>
                     <td> <?php echo $_SESSION['signin']; ?></td>
                   </tr>
                   <tr>
-                    <th>LastLogin</th>
+                    <th>LastSingup</th>
                     <td><?php   echo $info['last_signup'] ;?></td>
                   </tr>
                 </tbody>

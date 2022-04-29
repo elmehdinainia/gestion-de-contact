@@ -20,13 +20,18 @@ class User{
         $query->bindParam(3,$siup_log , PDO::PARAM_STR);
         if($query->execute()){
             $row = $query->fetch(PDO::FETCH_ASSOC);
-            $_SESSION['id_user'] = $row['iduser'];
+            // $_SESSION['id_user'] = $row['iduser'];
             $_SESSION['username'] = $username;
             $_SESSION['last_signup'] = $row['last_signup'];
-            header('location:authtifc.php');
-        }
-
-
+           
+     
+        $stmt2 =  $this->conn->prepare("SELECT * FROM `user` WHERE `username` = ?");
+                    $stmt2->bindParam(1,$username , PDO::PARAM_STR);
+                    $stmt2->execute();
+                    $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION['id_user'] = $row2['iduser'];
+                    header('location:authtifc.php');
+   }
  }
  public function signin($username,$password){
     $query= $this->conn ->prepare(" SELECT * FROM `user` WHERE `username` = ? AND `password` = ?"); 
@@ -42,6 +47,7 @@ class User{
         $time = date('h:i:sa');
         $sign_log = $date." ".$time;
         $_SESSION['signin'] = $sign_log;
+        echo $_SESSION['username'];
         header('location:contact.php');
     }
     }

@@ -58,7 +58,7 @@ if (isset($_POST['Update'])){
  include_once('dbConnect.php');
  include_once('contact.class.php');
  
-
+ $a = new contact(connect());
 if (isset($_GET['id'])){
 $results = $a->affichagepost($_GET['id']);
 }

@@ -1,7 +1,7 @@
 <?php
 include_once('dbConnect.php');
 include_once('./contact.class.php');
-$sel = new contact();
+// $sel = new contact();
 
 ?>
 <!DOCTYPE html>
@@ -49,7 +49,8 @@ $sel = new contact();
                 </thead>
   <tbody>
    <?php  
-   $sel = new contact();
+   
+   $sel = new contact(connect());
    $data = $sel->select(); 
   foreach($data as $row){?>
             <tr class="bg-white ">
