@@ -21,12 +21,6 @@ class contact{
             $this->phone = $phone;
             $this->address = $address;
 
-
-
-        //        $insert =connect()->prepare("INSERT INTO `contact`(iduser, Name, email, phone, adresse)VALUES (?,?,?,?,?)"); 
-        //        $insert ->execute(array($_SESSION['id_user'],$this->name, $this->email, $this->phone,$this->address));
-        //        echo $_SESSION['id_user'];
-
            $requete =$this->conn->prepare("INSERT INTO `Contact`(`iduser`,`Name`,`email`,`phone`,`Adresse`)
             VALUES(?,?,?,?,?)");
             $requete->bindParam(1,$_SESSION['id_user'] ,PDO::PARAM_INT);
@@ -50,6 +44,7 @@ class contact{
             $stmt = $insert ->fetchAll(PDO::FETCH_ASSOC);
          return $stmt;
         }
+       //todo------------------------------------------------crud--------------------------------------------------------------------------- 
 
         public function delit($id){
                         $dell = $this->conn->prepare("DELETE FROM `contact` WHERE id=?");
@@ -60,7 +55,6 @@ class contact{
         }
 
         
-       //todo------------------------------------------------crud--------------------------------------------------------------------------- 
         public function affichagepost($id){
                 $sql= "SELECT * FROM contact WHERE id=?";   
                 $stmt= $this->conn->prepare($sql); 
@@ -90,5 +84,4 @@ class contact{
         
 }
 
-// $a = new contact(connect());
 ?>

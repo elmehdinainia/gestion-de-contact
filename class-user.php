@@ -39,10 +39,9 @@ class User{
     $query->bindParam(2,$password , PDO::PARAM_STR);
     $query->execute();
     if($query->execute()){
-        $row = $query->fetch();
+        $row = $query->fetch(PDO::FETCH_ASSOC);
         $_SESSION['id_user'] = $row['iduser'];
         $_SESSION['username'] = $row['username'];
-        echo $row['iduser'];
         $date = date('Y-m-d');
         $time = date('h:i:sa');
         $sign_log = $date." ".$time;

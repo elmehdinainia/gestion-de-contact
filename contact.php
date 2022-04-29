@@ -1,7 +1,12 @@
 <?php
-
 include_once('contact.class.php');
 include_once('dbConnect.php');
+if(!isset($_SESSION['id_user'])){
+    header('Location:authtifc.php');
+    
+}
+
+
     
 if (isset($_POST['add'])){
     $contact = new contact(connect());

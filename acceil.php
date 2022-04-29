@@ -1,5 +1,5 @@
 <?php
-session_start();
+
     include_once('dbConnect.php');
      include_once('./class-user.php');
 if (isset($_POST['signup'])){
